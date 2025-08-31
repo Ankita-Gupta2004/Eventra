@@ -1,33 +1,32 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import WhatsHappening from './components/WhatsHappening';
-import Features from './components/Features';
-import Testimonials from './components/Testimonials';
-import Community from './components/Community';
-import Contributors from './components/Contributors';
-import Footer from './components/Footer';
-import EventCreation from './components/common/EventCreation';
-import AboutPage from './components/AboutPage';
-import EventsSection from './components/EventsSection';
-import HackathonHub from './components/HackathonHub';
-import ProjectGallery from './components/ProjectGallery';
-import createScrollToTopButton from './components/scrolltotopButton';
-import NotFound from './components/NotFound';
-import './App.css';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import WhatsHappening from "./components/WhatsHappening";
+import Features from "./components/Features";
+import Testimonials from "./components/Testimonials";
+import Community from "./components/Community";
+import Contributors from "./components/Contributors";
+import Footer from "./components/Footer";
+import EventCreation from "./components/common/EventCreation";
+import AboutPage from "./components/AboutPage";
+import EventsSection from "./components/EventsSection";
+import HackathonHub from "./components/HackathonHub";
+import ProjectGallery from "./components/ProjectGallery";
+import createScrollToTopButton from "./components/scrolltotopButton";
+import NotFound from "./components/NotFound";
+import "./App.css";
 
 // Import Auth components
-import Login from './components/auth/Login';
-import Signup from './components/auth/Signup';
-import Unauthorized from './components/auth/Unauthorized';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import { AuthProvider } from './context/AuthContext';
+import Login from "./components/auth/Login";
+import Signup from "./components/auth/Signup";
+import Unauthorized from "./components/auth/Unauthorized";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import { AuthProvider } from "./context/AuthContext";
 
 // Import Dashboard components
-import Dashboard from './components/Dashboard';
-import AdminDashboard from './components/admin/AdminDashboard';
-
+import Dashboard from "./components/Dashboard";
+import AdminDashboard from "./components/admin/AdminDashboard";
 
 function App() {
   useEffect(() => {
@@ -40,7 +39,7 @@ function App() {
         <div className="App">
           <Navbar />
 
-          <main className='min-h-screen'>
+          <main className="min-h-screen">
             <Routes>
               <Route
                 path="/"
@@ -64,7 +63,7 @@ function App() {
               <Route
                 path="/create-event"
                 element={
-                  <ProtectedRoute requiredPermissions={['CREATE_EVENT']}>
+                  <ProtectedRoute requiredPermissions={["CREATE_EVENT"]}>
                     <EventCreation />
                   </ProtectedRoute>
                 }
@@ -74,7 +73,7 @@ function App() {
               <Route
                 path="/admin"
                 element={
-                  <ProtectedRoute requiredRoles={['ADMIN']}>
+                  <ProtectedRoute requiredRoles={["ADMIN"]}>
                     <AdminDashboard />
                   </ProtectedRoute>
                 }
